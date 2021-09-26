@@ -12,6 +12,28 @@
 \useoutertheme{material}
 \usecolortheme{material}
 
+% Bib
+\setbeamercolor{bibliography item}{parent=item}
+\setbeamercolor{bibliography entry note}{fg=accent}  
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\hypersetup{
+    colorlinks,
+    citecolor=accent,
+    filecolor=accent,      
+    urlcolor=accent,
+    linkcolor=accent
+}
+
+% Meta
+\setbeamercovered{transparent=10}
+\setbeamertemplate{itemize item}{\faDotCircle}
+\setbeamercolor{button}{bg=white,fg=accent}
+
+%Icons
+\def\insertgotosymbol{%
+  \faLink
+}
+
 \setbeamertemplate{navigation symbols}{}
 
 \setbeamerfont*{title}{size=\Huge}
@@ -39,6 +61,17 @@ segmentation code={\path[draw=BGgrey01](segmentation.west) -- (segmentation.east
       \begin{tcolorbox}%
     }{%
       \begin{tcolorbox}[colbacktitle=primary, coltitle=textPrimary, title=#1, left=6mm, right=6mm, top=3mm, bottom=4mm, middle=4mm, toptitle=4mm, bottomtitle=3mm,]%
+    }%
+}{%
+  \end{tcolorbox}%
+}
+
+\newenvironment{cardRed}[1][pR23s2OTKY]{%
+  \setCardSettings
+    \ifthenelse{\equal{#1}{pR23s2OTKY}}{%
+      \begin{tcolorbox}%
+    }{%
+      \begin{tcolorbox}[colbacktitle=materialRed, coltitle=textPrimary, title=#1, left=6mm, right=6mm, top=3mm, bottom=4mm, middle=4mm, toptitle=4mm, bottomtitle=3mm,]%
     }%
 }{%
   \end{tcolorbox}%
@@ -79,4 +112,30 @@ segmentation code={\path[draw=BGgrey01](segmentation.west) -- (segmentation.east
   \end{frame}
 }
 
+\makeatletter
+\newbox\@backgroundblock
+\newenvironment{backgroundblock}{
+  \global\setbox\@backgroundblock=\vbox\bgroup%
+    \unvbox\@backgroundblock%
+    \vbox to0pt\bgroup\hbox to0pt\bgroup%
+    \ignorespaces
+}{\egroup\egroup\egroup}
+\addtobeamertemplate{background}{\box\@backgroundblock}{}
+\makeatother
+
+\newcommand{\presentationGraphics}[3]{
+  \begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (B) at (4,0) {
+      \cardImg{#1}{#3\textwidth}
+       
+    };
+    \only<#2>{%
+        \fill [draw=none, fill=white, fill opacity=0.7] (B.north west) -- (B.north east) -- (B.south east) -- (B.south west) -- (B.north west) -- cycle;
+    }
+  \end{tikzpicture}
+}
 \mode<all>
+
+\newcommand{\success}[1]{ { \color{materialGreen} #1} }
+\newcommand{\failure}[1]{ {\color{materialRed} #1} }
+\newcommand{\highlight}[1]{ { \color{accent} #1} }
