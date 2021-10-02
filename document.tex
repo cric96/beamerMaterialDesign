@@ -1,21 +1,23 @@
 \documentclass[9pt, aspectratio=169]{beamer}
+% ! TeX root = ...
 \usepackage[utf8]{inputenc}
 \usepackage{multicol}
 \usepackage{pgfpages}
 \usepackage{roboto}
 \usepackage{fontawesome5}
 \usepackage[T1]{fontenc}
-\usepackage{pdfcomment}
-\usepackage[backend=bibtex,style=numeric,sorting=none,doi=true,url=false]{biblatex} 
+\usepackage[final]{pdfcomment}
+\usepackage[backend=bibtex,style=alphabetic,sorting=none,doi=true,url=false]{biblatex} 
+\usepackage{xargs}
 
 \usetheme{material}
 
 \useDarkTheme
 \usePrimaryRed
 \useAccentGreen
-
 \begin{document}
-\title{A titlte}
+\title{An awsome presentation}
+\subtitle{With a good template}
 \author[G.Aguzzi]{
   \textbf{Gianluca Aguzzi}\inst{1}
 }
@@ -24,10 +26,10 @@
   \texttt{Alma Mater Studiorum} -- Università di Bologna, Cesena, Italy
 }
 \talk{
-  a talk
+  Talk @ a talk
 }
 
-\begin{frame}
+\begin{frame}[plain]
 \titlepage
 \end{frame}
 
