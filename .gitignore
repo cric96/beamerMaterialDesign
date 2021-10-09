@@ -9,6 +9,8 @@
 *.blg
 *.fls
 *.syn*
+*-blx*
+*.fbd*
 
 document.pdf
 *.bbl
