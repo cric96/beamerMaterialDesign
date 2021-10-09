@@ -1,34 +1,9 @@
+% ! TeX root = ./document.tex
 \documentclass[9pt, aspectratio=169]{beamer}
-% ! TeX root = ...
-\usepackage[utf8]{inputenc}
-\usepackage{multicol}
-\usepackage{pgfpages}
-\usepackage{roboto}
-\usepackage{fontawesome5}
-\usepackage[T1]{fontenc}
-\usepackage[final]{pdfcomment}
-\usepackage[backend=bibtex,style=alphabetic,sorting=none,doi=true,url=false]{biblatex} 
-\usepackage{xargs}
-
-\usetheme{material}
-
-\useDarkTheme
-\usePrimaryRed
-\useAccentGreen
+\input{partials/package.tex}
+\input{partials/theme-configuration.tex}
+\input{partials/title-content.tex}
 \begin{document}
-\title{An awsome presentation}
-\subtitle{With a good template}
-\author[G.Aguzzi]{
-  \textbf{Gianluca Aguzzi}\inst{1}
-}
-\institute{
-  \inst{1}
-  \texttt{Alma Mater Studiorum} -- Università di Bologna, Cesena, Italy
-}
-\talk{
-  Talk @ a talk
-}
-
 \begin{frame}[plain]
 \titlepage
 \end{frame}
@@ -99,7 +74,8 @@ All content should only appear in cards. There are several variants:
 \begin{frame}{card with a title}
 \begin{card}[Title]
 \end{card}
-
+\begin{alarm}[Title]
+\end{alarm}
 \begin{card}
 {\color{primary} \textbackslash begin\{card\}[Title]\\[2mm]}
 \null\qquad \textit{[your content here]}\\[2mm]
