@@ -3,7 +3,7 @@ Material Design theme is a theme for Beamer inspired by Google's Material Design
 
 If you like the design of Google apps and are tired of the themes provided by Beamer, this might be just what you are looking for. 
 
-For demonstration please see [materialDesignExample.pdf](materialDesignExample.pdf) which doubles as a quick manual. 
+For demonstration please see [materialDesignExample.pdf](https://github.com/cric96/presentation-template/releases/latest) which doubles as a quick manual. 
 
 Easiest way to use the theme is to download the code and create your presentation by changing materialDesignExample.pdf. 
 
