@@ -6,6 +6,6 @@ jobs:
   Setup-Compile-Deploy:
     runs-on: ubuntu-latest
     steps:
-      - env:
+      - with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: DanySK/compile-and-publish-all-latex@master
